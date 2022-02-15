@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://unpkg.com/jquery.terminal/js/jquery.terminal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/jquery.terminal/css/jquery.terminal.min.css"/>
+</head>
+<body style="font-size: 20px">
+    <script>
+        var stage = 0;
+        $('body').terminal({
+            hello: function(what) {
+                this.echo('Hello, ' + what +
+                          '. Wellcome to this terminal.');
+            },
+            42: function() {
+                this.echo('Correct!  But not for this puzzle')
+            },
+            daniel: function(){
+                if(stage == 3){
+                    const jsConfetti = new JSConfetti()
+                    jsConfetti.addConfetti()
+                    this.echo('You win, your nest is full of ducks now');
+                }
+            },
+            electricity: function(){
+                if(stage == 2){
+                    stage++;
+                    
+                    this.echo('\nDon\t over think this one, just use context clues');
+                    this.echo('\nCZYELTJJP FU\'V AEEM LTM. UPYE IDMFEJ UZ RFM.  CDYYP AFWUCIDP!');
+                }else{
+                    this.echo('yep you said that');
+                }
+            },
+            twentythree: function(){
+                if(stage == 1){
+                    stage++;
+                    this.echo('for this one you can\'t ascii any questions');
+                    this.echo('\n69 76 69 67 84 82 73 67 73 84 89');
+                }else{
+                    this.echo('yep you said that');
+                }
+            },
+            brother: function() {
+                if(stage == 0){
+                    this.echo(
+                        " __      __       .__                               \n" +
+"/  \\    /  \\ ____ |  |   ____  ____   _____   ____  \n" +
+"\\   \\/\\/   // __ \\|  | _/ ___\\/  _ \\ /     \\_/ __ \\ \n" +
+" \\        /\\  ___/|  |_\\  \\__(  <_> )  Y Y  \\  ___/ \n" +
+"  \\__/\\  /  \\___  >____/\\___  >____/|__|_|  /\\___  >\n" +
+"       \\/       \\/          \\/            \\/     \\/ \n")
+                    this.echo("\n disclaimers: all answers are lowercases with no spaces.  Temper your expectations, there's no prizes.  Also no checking the source code.")
+                    this.echo("\neer htyt newt sielzz up sih tot rewsnae ht")
+                    stage++;
+                }else{
+                    this.echo("yeah got that already");
+                }
+            }
+        }, {
+            greetings: 'speak brother and enter . . .'
+        });
+        </script>
+</body>
+</html>
